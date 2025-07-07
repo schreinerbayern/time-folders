@@ -1,0 +1,8 @@
+FROM oven/bun:debian
+ARG USERNAME=root
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+
+RUN apt update 
+RUN curl -fsSL https://bun.sh/install | bash
+RUN bun install -g @google/gemini-cli
